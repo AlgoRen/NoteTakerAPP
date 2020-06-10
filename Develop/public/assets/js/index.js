@@ -8,6 +8,13 @@ const $noteList = $(".list-container .list-group");
 // Obj { {id: 2, text: text goes here}, {id: 3, text: text goes here} }
 let activeNote = {};
 
+// A function for sending notes.html file to client.
+// const sendNotes = () => {
+//   return $.ajax({
+//     url: "/notes"
+//   })
+// }
+
 // A function for getting all notes from the db
 const getNotes = () => {
   return $.ajax({
@@ -18,6 +25,7 @@ const getNotes = () => {
 
 // A function for saving a note to the db
 const saveNote = (note) => {
+  console.log(note);
   return $.ajax({
     url: "/api/notes",
     data: note,
@@ -89,6 +97,7 @@ const handleNoteDelete = function (event) {
 // Sets the activeNote and displays it
 const handleNoteView = function () {
   activeNote = $(this).data();
+  console.log(activeNote);
   renderActiveNote();
 };
 

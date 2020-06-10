@@ -1,0 +1,4 @@
+Active note refers to the note that is clicked on by user that will allow them to 
+fill out information.
+HandleSaveNote is a function that gets the values of what is the result of active note
+and calls the API.
