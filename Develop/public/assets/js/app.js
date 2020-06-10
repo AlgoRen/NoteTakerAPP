@@ -2,6 +2,8 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
+var fs = require("fs");
+
 
 // Sets up the Express App
 // =============================================================
@@ -49,6 +51,13 @@ app.get("/api/notes", function (req, res) {
     return res.json(newNotes);
 });
 
+app.delete("/api/notes/:id", function (req, res) {
+    var quickTest = body.url;
+    var notes = req.body;
+    notes.empty();
+    console.log(notes);
+    console.log(quickTest);
+})
 
 // Starts the server to begin listening
 // =============================================================
@@ -56,3 +65,16 @@ app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
   
+  //app.delete("api/notes/:id", (req, res) => {
+// let notesID = req.params.id;
+  //fs.readFile("db.json", (err, data) => {
+    //  if (err) throw err
+    // parse data, filter data, fs writefile
+  //})
+  //})
+  
+//   let postNote = {
+//       title: req.body.title,
+//       text: req.body.text,
+//       id: 123
+//   }
